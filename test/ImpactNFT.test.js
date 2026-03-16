@@ -155,7 +155,7 @@ describe("ImpactNFT", function () {
       );
 
       await expect(
-        impactNFT.connect(addr1).safeTransferFrom(addr1.address, addr2.address, 0)
+        impactNFT.connect(addr1)["safeTransferFrom(address,address,uint256)"](addr1.address, addr2.address, 0)
       ).to.be.revertedWith("Badge is soulbound and cannot be transferred");
     });
 
